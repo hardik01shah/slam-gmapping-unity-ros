@@ -17,7 +17,8 @@ SLAM (Simultaneous Localization and Mapping) uses various information about the 
 ## Setup on UNITY side:
 1. The _lidarfinal_ script simulates a LIDAR in Unity using the raycast feature.
 2. The _Laser_Scan_Publisher_ script of ROS# publishes the LIDAR data of _lidarfinal_ to the _scan_temp_ rostopic.
-3. The _Pose_Stamped_Publisher_ script of ROS publishes the pose of the robot on _/pose_
-teleop vs updown
-cylinder is robot
-add empty gameobject, rosconnector in prev repo.
+3. The _Pose_Stamped_Publisher_ script of ROS publishes the pose of the robot on _/pose_  
+teleop vs updown  
+cylinder is robot  
+add empty gameobject, rosconnector in prev repo.  
+add map.pgm in files.  

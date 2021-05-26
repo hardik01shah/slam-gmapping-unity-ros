@@ -92,3 +92,9 @@ The tf_tree:</br>
 1. Lidar Testing is the complete Unity Project.
 2. control_test is the project folder from the catkin_ws
 3. Map generated after gmapping has also been uploaded.
+
+## Error Handling:
+1. Time stamp delay between Unity and ROS. When LaserScan data is published from Unity to ROS, and when that data is used by SLAM and visualized in RViZ, there is a delay and that eventually leads to the error “Message is too old to display”. This was handled using a buffer script that assigns a new timestamp to the incoming message from Unity to stop the delay.
+2. The transform between the map and odom frame does not exist. This error does not show up in Gazebo because it already takes care of configuring the transform of the bot using the incoming odometry data. However, in the case of Unity a transform must be created between the map frame and the odom frame using the pose of the bot. This is again done using a rospy script that subscribes to the /pose topic that publishes the pose of the bot in Unity. The script manually assigns a transform between the map and odom frame.
+3. There must exist a transform between the robot_base and the base_scan. This means the relative position of the LiDAR w.r.t the base of the robot. Since, there is no relative motion between the LiDAR and the robot base a static_tranform_publisher is used to create this transform. This is done natively in another terminal window. There is no need for a script for this task. The static_tranform_publisher of ROS handles this. 
+4. The LiDAR data received is not updated. This occurs because what we are trying to do is a simulation. The parameters of the LiDAR are ideal which is not possible in the real world. The time_update parameter of the LiDAR was initially set to 0 which is an ideal value, not achievable in the real world. This error was handled by setting the time_update value of a real LiDAR available in the market. 

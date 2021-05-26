@@ -82,9 +82,9 @@ The robot in this project is just a simple cylinder to emulate a LIDAR.
 ## Simulation:
 https://user-images.githubusercontent.com/61026273/119598940-93de5b80-be01-11eb-80e5-bb9aa4f787a7.mp4
 
-The rqt_graph :
+The rqt_graph:</br>
 ![rosgraph_unity_gmap](https://user-images.githubusercontent.com/61026273/119598976-ad7fa300-be01-11eb-9eb9-9d0ce6255dbe.png)
 
-The tf_tree:
+The tf_tree:</br>
 ![frames_unity_gmap](https://user-images.githubusercontent.com/61026273/119598996-b53f4780-be01-11eb-8522-c2c0e78b1d67.png)
 
